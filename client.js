@@ -29,6 +29,8 @@ client.on("data", (data) => {
   const headerSize = TOTAL_LENGTH_SIZE + HANDLER_ID_SIZE;
   const message = buffer.subarray(headerSize);
   console.log(`server에게 받은 메세지: ${message}`);
+  console.log("string: ", buffer.toString());
+  console.log("json: ", buffer.toJSON());
 });
 
 client.on("close", () => {
